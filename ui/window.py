@@ -1,7 +1,7 @@
 from ui.theme import *
 import tkinter as tk
 from core.brain import cevap_ver
-
+from voice.speaker import konus
 
 def mesaj_ekle(kisi, mesaj):
     sohbet.config(state="normal")
@@ -21,6 +21,8 @@ def gonder():
     cevap = cevap_ver(komut)
 
     mesaj_ekle("ARES", cevap)
+
+    konus(cevap)
 
     giris.delete(0, tk.END)
 
