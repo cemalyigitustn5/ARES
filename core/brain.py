@@ -1,3 +1,4 @@
+from memory.profile import bilgi_kaydet, bilgi_getir
 from core.personality import AresPersonality
 from memory.memory import yukle, kaydet
 from modules.system import sistem_komutu
@@ -41,6 +42,46 @@ def cevap_ver(komut):
             return f"Sen {isim}. Benim geliştiricimsin."
 
         return "Henüz seni tanımıyorum."
+
+    # Yeni bilgi kaydetme
+    if komut.startswith("hatırla "):
+        veri = komut.replace("hatırla ", "")
+
+        if " " in veri:
+            konu, bilgi = veri.split(" ", 1)
+
+            bilgi_kaydet(konu, bilgi)
+
+            return f"{konu} bilgisini hafızama aldım."
+
+
+    # Hafızadan bilgi çağırma
+    if komut.startswith("neydi "):
+        konu = komut.replace("neydi ", "")
+
+        bilgi = bilgi_getir(konu)
+
+        if bilgi:
+            return f"{konu}: {bilgi}"
+
+        return "Bu bilgiyi hafızamda bulamadım."
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     # Selamlaşma

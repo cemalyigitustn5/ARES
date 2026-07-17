@@ -1,3 +1,6 @@
 {
-    "isim": "cemal"
+    "isim": "cemal",
+    "bilgiler": {
+        "renk": "siyah"
+    }
 }
