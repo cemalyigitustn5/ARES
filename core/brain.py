@@ -3,7 +3,7 @@ from core.personality import AresPersonality
 
 from commands.time import saat, tarih
 from commands.system_info import sistem
-
+from ai.local_ai import sor
 
 ares = AresPersonality()
 
@@ -51,4 +51,4 @@ def cevap_ver(komut):
         return "Merhaba Cemal."
 
 
-    return "Bu komutu henüz bilmiyorum."
+	return sor(komut)
