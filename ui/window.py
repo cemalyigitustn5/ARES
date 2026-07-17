@@ -1,3 +1,4 @@
+import time
 from ui.theme import *
 import tkinter as tk
 from core.brain import cevap_ver
@@ -58,7 +59,27 @@ def baslat():
         bd=10
     )
     sohbet.pack(padx=10)
+    
+    baslangic = """
+    ARES CORE BOOTING...
 
+    [✓] Brain        ONLINE
+    [✓] Memory       ONLINE
+    [✓] Speaker      ONLINE
+    [!] Microphone   OFFLINE
+    [✓] Vision       READY
+
+    SYSTEM READY.
+
+    """
+    
+    
+    
+    
+    
+    
+    
+    
     sohbet.insert(tk.END, "ARES: Merhaba Cemal.\n")
     sohbet.insert(tk.END, "ARES: Ben göreve hazırım.\n\n")
     sohbet.config(state="disabled")

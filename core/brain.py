@@ -1,5 +1,11 @@
+from core.personality import AresPersonality
 from memory.memory import yukle, kaydet
 from modules.system import sistem_komutu
+
+
+ares = AresPersonality()
+
+
 
 def cevap_ver(komut):
     komut = komut.lower()
@@ -17,6 +23,12 @@ def cevap_ver(komut):
 
     if komut == "ben kimim":
         return hafiza.get("isim", "Henüz adını bilmiyorum.")
+
+    if komut in ["sen kimsin", "kendini tanıt"]:
+        return ares.tanit()
+
+    if komut in ["hazır mısın", "durumun ne"]:
+        return ares.durum()
 
     if komut == "merhaba":
         return "Merhaba!"
